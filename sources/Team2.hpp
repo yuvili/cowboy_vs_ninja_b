@@ -7,13 +7,8 @@ namespace ariel{
         public:
             Team2(Character* leader);
 
-            void add(Character* member) override;
-            int stillAlive();
             void attack(Team*);
             void print();
-
-            std::vector<Character*> getTeam() const;
-            Character* getLeader() const;
     };
 };
 #endif
