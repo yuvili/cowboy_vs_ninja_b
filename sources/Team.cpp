@@ -196,4 +196,8 @@ namespace ariel {
     Character* Team::getLeader() const {
         return this->leader;
     }
+
+    void Team::setLeader(Character* other) {
+        this->leader = other;
+    }
 }

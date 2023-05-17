@@ -12,28 +12,6 @@ using namespace std;
 namespace ariel{
     Team2::Team2(Character* leader) : Team(leader) {}
 
-    void Team2::add(Character* member){
-        if(this->members.size() >= 10){
-            throw std::runtime_error("Max characters in team excided.");
-        }
-        if(member->getInTeam()){
-            throw std::runtime_error(member->getName() + " is already in a team.");
-        }
-        
-        this->members.push_back(member);
-        member->setInTeam(true);
-    }
-
-    int Team2::stillAlive(){
-        int counter = 0;
-        for(size_t i = 0; i < members.size(); i++){
-            if(members.at(i)->isAlive()) {
-                counter++;
-            }
-        }
-        return counter;
-    }
-
     void Team2::attack(Team* enemy){
         if(enemy == nullptr) {
             throw std::invalid_argument("Can't attack nullptr.");
@@ -104,13 +82,5 @@ namespace ariel{
                 }
             }
         }
-    }
-
-    std::vector<Character*> Team2::getTeam() const {
-        return this->members;
-    }
-
-    Character* Team2::getLeader() const {
-        return this->leader;
     }
 }

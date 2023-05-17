@@ -6,6 +6,13 @@
 using namespace std;
 
 class Character{
+    private:
+        // Variables
+        Point _possition;
+        int hit_points;
+        string _name;
+        bool inTeam;
+
     public:
         // Constructors
         Character();
@@ -17,12 +24,6 @@ class Character{
 
         Character& operator=(const Character&);
         Character& operator=(Character&&) noexcept;
-
-        // Variables
-        Point _possition;
-        int hit_points;
-        string _name;
-        bool inTeam;
 
         // Functions
         virtual bool isAlive(); 
@@ -36,5 +37,6 @@ class Character{
         int getHitPoints();
         bool getInTeam();
         void setInTeam(bool);
+        void setPossition(Point&);
 };
 #endif

@@ -10,7 +10,9 @@ Character::Character() : _name(""), _possition(Point()), hit_points(0), inTeam(f
 
 Character::Character(string name, Point possition, int hit_points) : _name(name), _possition(possition), hit_points(hit_points), inTeam(false) {}
 
-Character::~Character() {}
+Character::~Character() {
+    this->_name.~basic_string();
+}
 
 Character::Character(const Character& other) : Character(other._name, other._possition, other.hit_points) {}
 
@@ -68,4 +70,8 @@ bool Character::getInTeam() {
 
 void Character::setInTeam(bool newSet) {
     this->inTeam = newSet;
+}
+
+void Character::setPossition(Point& other) {
+    this->_possition = other;
 }

@@ -42,7 +42,7 @@ void Cowboy::reload(){
 
 string Cowboy::print() {
     if(isAlive()){
-        return "(C) Name: " + _name + ", Position: " + _possition.print() + ", Hit Points: " + to_string(hit_points);
+        return "(C) Name: " + this->getName() + ", Position: " + this->getLocation().print() + ", Hit Points: " + to_string(this->getHitPoints());
     }
-    return "(C) Name: (" + _name + "), Position: " + _possition.print();
+    return "(C) Name: (" + this->getName() + "), Position: " + this->getLocation().print();
 }
